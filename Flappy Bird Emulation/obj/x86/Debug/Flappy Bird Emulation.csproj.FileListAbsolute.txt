@@ -1,0 +1,48 @@
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Debug\Flappy Bird Emulation.csprojAssemblyReference.cache
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Flappy Bird Emulation.exe
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Flappy Bird Emulation.pdb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\MonoGame.Framework.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\SharpDX.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\SharpDX.XInput.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\MonoGame.Framework.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\SharpDX.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\SharpDX.XInput.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Debug\Flappy Bird Emulation.csproj.CopyComplete
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Debug\Flappy Bird Emulation.exe
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Debug\Flappy Bird Emulation.pdb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\fb-spritesheet.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\pipe-red.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\redbird-downflap.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\redbird-midflap.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\bluebird-midflap.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\8.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\9.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\background-day.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\redbird-upflap.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\yellowbird-upflap.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\background-night.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\bluebird-upflap.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\yellowbird-downflap.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\yellowbird-midflap.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\pipe-green.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\gameover.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\base.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\bluebird-downflap.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\7.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\6.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\5.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\1.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\0.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\2.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\3.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\message.xnb

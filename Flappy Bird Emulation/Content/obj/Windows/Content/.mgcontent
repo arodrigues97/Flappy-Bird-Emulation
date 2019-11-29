@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/0.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/1.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/2.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/3.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/5.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/6.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/7.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/8.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/9.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/background-day.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/background-night.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/base.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/bluebird-downflap.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/bluebird-midflap.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/bluebird-upflap.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/fb-spritesheet.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/gameover.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/message.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/pipe-green.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/pipe-red.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/redbird-downflap.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/redbird-midflap.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/redbird-upflap.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/yellowbird-downflap.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/yellowbird-midflap.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/yellowbird-upflap.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
