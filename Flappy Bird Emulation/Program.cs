@@ -8,15 +8,14 @@ namespace Flappy_Bird_Emulation {
     /// </summary>
     public static class Program  {
 
-        public const bool DEV_MODE = true;
+        public const bool DEV_MODE = false;
 
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main() {
-            using (var game = new FlappyBirdGame())
-                game.Run();
+            GameManager.GetGame().Run();
         }
 
     }

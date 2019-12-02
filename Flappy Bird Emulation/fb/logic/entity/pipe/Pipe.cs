@@ -1,5 +1,5 @@
 ﻿using Flappy_Bird.fb;
-using Flappy_Bird.node;
+using Flappy_Bird.entity;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -20,7 +20,12 @@ namespace Flappy_Bird_Emulation.fb.entity.pipe {
         }
 
         public override void Draw(SpriteBatch spriteBatch) {
-            GameManager.GetGame().GetSpriteSheet().DrawTexture(GetTexture(), 0, 0);
+            Texture2D texture = GetTexture();
+            Rectangle sourceRectangle = new Rectangle(0, 0, rectangle.Width, rectangle.Height);
+            Vector2 origin = new Vector2(0, 0);
+            Vector2 location = new Vector2(rectangle.X, rectangle.Y);
+            spriteBatch.Draw(texture, location, sourceRectangle, Color.White, 0f, origin, 1.0f, SpriteEffects.None, 0.9f);
+
         }
 
         public override Texture2D GetTexture() {
@@ -31,7 +36,10 @@ namespace Flappy_Bird_Emulation.fb.entity.pipe {
         }
 
         public override void Update(GameTime gameTime) {
-           
+            if (GameManager.GetGame().GetFlappyBird().IsDead()) {
+                return;
+            }
+            rectangle.X--;
         }
     }
 

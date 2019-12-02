@@ -16,6 +16,8 @@ namespace Flappy_Bird.fb.Screen {
 
         }
 
+        public override void Initialize() { }
+
         public override void Draw(GameTime gameTime) {
             
         }

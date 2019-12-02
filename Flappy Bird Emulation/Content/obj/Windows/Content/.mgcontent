@@ -8,6 +8,7 @@
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/1.png</File>
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/2.png</File>
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/3.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/4.png</File>
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/5.png</File>
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/6.png</File>
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/7.png</File>
@@ -27,11 +28,22 @@
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/redbird-downflap.png</File>
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/redbird-midflap.png</File>
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/redbird-upflap.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/sfx_die.wav</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/sfx_hit.wav</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/sfx_point.wav</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/sfx_swooshing.wav</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/sfx_wing.wav</File>
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/yellowbird-downflap.png</File>
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/yellowbird-midflap.png</File>
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/yellowbird-upflap.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

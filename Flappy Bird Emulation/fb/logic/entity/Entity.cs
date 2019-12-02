@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Flappy_Bird.node {
+namespace Flappy_Bird.entity {
 
     public abstract class Entity {
 
         protected readonly EntityType entityType;
 
         /// <summary>
-        /// Represents the location of the node.
+        /// Represents the location of the entity.
         /// </summary>
         protected Vector2 location;
 
@@ -31,6 +31,10 @@ namespace Flappy_Bird.node {
         public abstract void Draw(SpriteBatch spriteBatch);
 
         public abstract Texture2D GetTexture();
+
+        public Rectangle GetRectangle() {
+            return rectangle;
+        }
 
         public EntityType GetEntityType() {
             return entityType;

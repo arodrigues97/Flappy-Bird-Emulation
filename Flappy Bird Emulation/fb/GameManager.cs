@@ -1,4 +1,6 @@
 ﻿//using System;
+using Flappy_Bird.fb.Screen;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,9 +34,12 @@ namespace Flappy_Bird.fb{
         
         public static void InitializeState(GameState state) {
             gameState = state;
-            if (state == GameState.PLAYING) {
-                game.InitializeState(state);
+            GameScreen screen = game.GetGameScreen();
+            if (screen == null) {
+                Console.WriteLine("Error for game state: " + state + ", screen is null " + screen);
+                return;
             }
+            screen.Initialize();
         }
     
         /// <summary>

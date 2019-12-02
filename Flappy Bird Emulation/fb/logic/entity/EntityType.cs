@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Flappy_Bird_Emulation.fb.entity {
     public enum EntityType {
-        ENTITY = 0,
-        BIRD = 1,
-        PIPE = 2 
+        BIRD = 0,
+        PIPE = 1 
     }
 }

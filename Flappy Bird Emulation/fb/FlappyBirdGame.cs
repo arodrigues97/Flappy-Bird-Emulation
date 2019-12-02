@@ -1,42 +1,42 @@
 ﻿
-using Flappy_Bird_Emulation;
+using Flappy_Bird.fb.entity;
 using Flappy_Bird.fb.Screen;
+using Flappy_Bird_Emulation;
+using Flappy_Bird_Emulation.fb;
+using Flappy_Bird_Emulation.fb.logic;
+using Flappy_Bird_Emulation.fb.spritesheet;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
-using Flappy_Bird.fb.entity;
 using System.Diagnostics;
-using Flappy_Bird_Emulation.fb;
-using Flappy_Bird_Emulation.fb.logic;
 
-//https://www.pngkey.com/detail/u2q8o0r5i1i1y3q8_flappy-bird-atlas-png/
-//https://github.com/sourabhv/FlapPyBird/tree/master/assets/sprites
 
-namespace Flappy_Bird.fb
-{
+namespace Flappy_Bird.fb {
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
     public class FlappyBirdGame : Game {
 
-
+        /// <summary>
+        /// Represents the random instance to use.
+        /// </summary>
         public static Random Random = new Random();
 
         /// <summary>
         /// Represents the games menu screen.
         /// </summary>
-        private MenuScreen menuScreen;
+        private readonly MenuScreen menuScreen;
 
         /// <summary>
         /// Represents the games play screen.
         /// </summary>
-        private PlayScreen playScreen;
+        private readonly PlayScreen playScreen;
 
         /// <summary>
         /// Represents the games pause screen.
         /// </summary>
-        private PauseScreen pauseScreen;
+        private readonly PauseScreen pauseScreen;
 
         /// <summary>
         /// Represents the Graphics Device manager instance.
@@ -56,10 +56,12 @@ namespace Flappy_Bird.fb
         /// <summary>
         /// Represents the Sprite Sheet we will be parsing and using.
         /// </summary>
-        private SpriteSheet spriteSheet;
+        private FlappyBirdSpriteSheet spriteSheet;
 
-
-        private PipeManager pipeManager = new PipeManager();
+        /// <summary>
+        /// Represents the Entity Manager instance.
+        /// </summary>
+        private readonly EntityManager entityManager;
 
         /// <summary>
         /// Constructs a new DoodleJumpGame  instance.
@@ -67,6 +69,11 @@ namespace Flappy_Bird.fb
         public FlappyBirdGame() {
             Content.RootDirectory = "Content";
             graphics = new GraphicsDeviceManager(this);
+            entityManager = new EntityManager();
+            menuScreen = new MenuScreen(this);
+            playScreen = new PlayScreen(this);
+            pauseScreen = new PauseScreen(this);
+            Console.WriteLine("Created new Flappy Bird Game");
         }
 
         /// <summary>
@@ -81,20 +88,20 @@ namespace Flappy_Bird.fb
             graphics.PreferredBackBufferHeight = 512;
             graphics.PreferredBackBufferWidth = 288;
             graphics.ApplyChanges();
+            this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 100.0f);
         }
 
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
         /// </summary>
-        protected override void LoadContent()  {
-            // Create a new SpriteBatch, which can be used to draw textures.
+        protected override void LoadContent() {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            menuScreen = new MenuScreen(this);
-            playScreen = new PlayScreen(this);
-            pauseScreen = new PauseScreen(this);
-            spriteSheet = new SpriteSheet(this, "fb-spritesheet");
-            spriteSheet.parse();
+            menuScreen.Load();
+            playScreen.Load();
+            pauseScreen.Load();
+            spriteSheet = new FlappyBirdSpriteSheet(this);
+            spriteSheet.Parse();
             Debug.WriteLine("Loaded Content!");
         }
 
@@ -112,12 +119,18 @@ namespace Flappy_Bird.fb
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime) {
-            GetGameScreen().Update(gameTime);
+            GameScreen screen = GetGameScreen();
+            if (screen != null) {
+                GetGameScreen().Update(gameTime);
+            }
+            if (GameManager.GetGameState() == GameState.PLAYING) {
+                GetEntityManager().Update(gameTime);
+            }
             base.Update(gameTime);
             MouseState mouseState = Mouse.GetState(Window);
             if (Program.DEV_MODE) {
                 spriteBatch.Begin();
-                Console.WriteLine("Mouse X: " + mouseState.Position.X + ", Mouse Y: " + mouseState.Position.Y , new Vector2(10, 10), Color.Black);
+                Console.WriteLine("Mouse X: " + mouseState.Position.X + ", Mouse Y: " + mouseState.Position.Y, new Vector2(10, 10), Color.Black);
                 spriteBatch.End();
             }
         }
@@ -127,22 +140,21 @@ namespace Flappy_Bird.fb
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime) {
-            spriteBatch.Begin();
-            GetGameScreen().Draw(gameTime);
+            GameScreen screen = GetGameScreen();
+            spriteBatch.Begin(SpriteSortMode.FrontToBack);
+            if (GameManager.GetGameState() == GameState.PLAYING) {
+                GetEntityManager().Draw(gameTime, spriteBatch);
+            }
+            if (screen != null) {
+                GetGameScreen().Draw(gameTime);
+            }
             spriteBatch.End();
             base.Draw(gameTime);
         }
 
-        public void InitializeState(GameState state) {
-            switch (state) {
-                case GameState.MAIN_MENU:
-                    break;
-                case GameState.PAUSE:
-                    break;
-                       case GameState.PLAYING:
-                    flappyBird = new FlappyBird(this);
-                    break;
-            }
+        public FlappyBird SetFlappyBird(FlappyBird flappyBird) {
+            this.flappyBird = flappyBird;
+            return this.flappyBird;
         }
 
         /// <summary>
@@ -161,6 +173,14 @@ namespace Flappy_Bird.fb
             return null;
         }
 
+        public FlappyBird GetFlappyBird() {
+            return flappyBird;
+        }
+
+        public EntityManager GetEntityManager() {
+            return entityManager;
+        }
+
         public SpriteSheet GetSpriteSheet() {
             return spriteSheet;
         }
@@ -172,6 +192,7 @@ namespace Flappy_Bird.fb
         public SpriteBatch GetSpriteBatch() {
             return spriteBatch;
         }
+
 
     }
 }

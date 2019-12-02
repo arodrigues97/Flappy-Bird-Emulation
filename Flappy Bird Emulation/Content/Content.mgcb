@@ -61,6 +61,18 @@
 /processorParam:TextureFormat=Color
 /build:3.png
 
+#begin 4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:4.png
+
 #begin 5.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -288,6 +300,36 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:redbird-upflap.png
+
+#begin sfx_die.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sfx_die.wav
+
+#begin sfx_hit.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sfx_hit.wav
+
+#begin sfx_point.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sfx_point.wav
+
+#begin sfx_swooshing.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sfx_swooshing.wav
+
+#begin sfx_wing.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sfx_wing.wav
 
 #begin yellowbird-downflap.png
 /importer:TextureImporter

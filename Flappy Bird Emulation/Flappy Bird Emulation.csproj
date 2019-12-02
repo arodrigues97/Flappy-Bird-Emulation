@@ -41,20 +41,23 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="fb\entity\EntityType.cs" />
-    <Compile Include="fb\entity\pipe\Pipe.cs" />
+    <Compile Include="fb\logic\entity\EntityType.cs" />
+    <Compile Include="fb\logic\entity\flappybird\BirdPhysics.cs" />
+    <Compile Include="fb\logic\entity\flappybird\BirdType.cs" />
+    <Compile Include="fb\logic\entity\pipe\Pipe.cs" />
     <Compile Include="fb\FlappyBirdGame.cs" />
     <Compile Include="fb\GameManager.cs" />
     <Compile Include="fb\GameState.cs" />
-    <Compile Include="fb\entity\Entity.cs" />
-    <Compile Include="fb\entity\FlappyBird.cs" />
+    <Compile Include="fb\logic\entity\Entity.cs" />
+    <Compile Include="fb\logic\entity\flappybird\FlappyBird.cs" />
     <Compile Include="fb\logic\EntityManager.cs" />
     <Compile Include="fb\logic\PipeManager.cs" />
     <Compile Include="fb\screen\GameScreen.cs" />
     <Compile Include="fb\screen\MenuScreen.cs" />
     <Compile Include="fb\screen\PauseScreen.cs" />
     <Compile Include="fb\screen\PlayScreen.cs" />
-    <Compile Include="fb\SpriteSheet.cs" />
+    <Compile Include="fb\spritesheet\FlappyBirdSpriteSheet.cs" />
+    <Compile Include="fb\spritesheet\SpriteSheet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -14,14 +14,14 @@ namespace Flappy_Bird.fb.Screen {
 
         public GameScreen(FlappyBirdGame game) {
             this.game = game;
-            Load();
         }
-
         public abstract void Update(GameTime gameTime);
 
         public abstract void Draw(GameTime gameTime);
 
         public abstract void Load();
+
+        public abstract void Initialize();
 
     }
 
