@@ -1,79 +1,87 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Flappy_Bird.fb.entity;
+﻿using Flappy_Bird.fb.entity;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace Flappy_Bird.fb.Screen {
     public class MenuScreen : GameScreen {
 
-        private Texture2D background;
-
-        private Texture2D baseLand;
-
-        private Texture2D menuMessage;
-
         private Texture2D[] birdAnimations;
-
-        private Rectangle menuMessageRectangle = new Rectangle(50, 100, 184, 267);
 
         private long flapChange = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
 
         private int birdFlapCount = 0;
 
-        private Vector2 birdLocation = new Vector2(45, 290);
+        private Vector2 birdLocation = new Vector2(126, 210);
 
         private long bobChange = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
 
         private bool up;
 
+        private bool highscores;
+
         public MenuScreen(FlappyBirdGame game) : base(game) {
         }
         public override void Load() {
-            background = game.Content.Load<Texture2D>("background-day");
-            baseLand = game.Content.Load<Texture2D>("base");
-            menuMessage = game.Content.Load<Texture2D>("message");
-            birdAnimations = new Texture2D[]{game.Content.Load<Texture2D>("yellowbird-upflap"), game.Content.Load<Texture2D>("yellowbird-midflap"), game.Content.Load<Texture2D>("yellowbird-downflap")};
-;        }
+            birdAnimations = new Texture2D[] { game.GetSpriteSheet().GetTexture("yellow-upflap"), game.GetSpriteSheet().GetTexture("yellow-midflap"), game.GetSpriteSheet().GetTexture("yellow-downflap") };
+            ;
+        }
 
         public override void Initialize() { }
 
         public override void Update(GameTime gameTime) {
-            MouseState state = Mouse.GetState(game.Window);
-            if ((long)(DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond) - flapChange > FlappyBird.FLAP_SPEED) {
-                flapChange = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
-                birdFlapCount++;
-                if (birdFlapCount == 3) {
-                    birdFlapCount = 0;
+            if (highscores) {
+
+            } else {
+                MouseState state = Mouse.GetState(game.Window);
+                if ((long)(DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond) - flapChange > FlappyBird.FLAP_SPEED) {
+                    flapChange = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
+                    birdFlapCount++;
+                    if (birdFlapCount == 3) {
+                        birdFlapCount = 0;
+                    }
                 }
-            }
-            if ((long) (DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond) - bobChange  > 300L) {
-                bobChange = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
-                up = !up;
-            }
-            if (up) {
-                birdLocation.Y += 1;
-             } else {
-                birdLocation.Y -= 1;
-            }
-            if (menuMessageRectangle.Contains(state.Position) && state.LeftButton == ButtonState.Pressed) {
-                GameManager.InitializeState(GameState.PLAYING);
+                if ((long)(DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond) - bobChange > 300L) {
+                    bobChange = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
+                    up = !up;
+                }
+                if (up) {
+                    birdLocation.Y += 1;
+                } else {
+                    birdLocation.Y -= 1;
+                }
+                if (game.GetSpriteSheet().IsInsideTexture("play-button", state, 30, 338) && state.LeftButton == ButtonState.Pressed) {
+                    GameManager.InitializeState(GameState.PLAYING);
+                }
+                if (game.GetSpriteSheet().IsInsideTexture("highscore-button", state, 150, 338) && state.LeftButton == ButtonState.Pressed) {
+                    highscores = !highscores;
+                }
             }
         }
 
         public override void Draw(GameTime gameTime) {
-            game.GetSpriteBatch().Draw(background, new Rectangle(0, 0, 288, 512), Color.White);
-            game.GetSpriteBatch().Draw(baseLand, new Rectangle(0,    512-112, 336, 112), Color.White);
-            game.GetSpriteBatch().Draw(menuMessage, menuMessageRectangle, Color.White);
-            game.GetSpriteBatch().Draw(birdAnimations[birdFlapCount], new Rectangle((int) birdLocation.X, (int) birdLocation.Y, 34, 24), Color.White);
-            game.GetSpriteSheet().DrawTexture("score-button", 186, 372);
-            game.GetSpriteSheet().DrawTexture("menu-button", 58, 372);
+            game.GetSpriteSheet().DrawTexture("background-day", 0, 0);
+            game.GetSpriteSheet().DrawTexture("base", 0, 512 - 112);
+            game.GetSpriteSheet().DrawTexture("logo", 50, 120);
+            if (highscores) {
+                PlayScreen playScreen = game.GetPlayScreen();
+                playScreen.DrawNumber(1, 100, 10, false);
+            } else {
+                game.GetSpriteSheet().DrawTexture("play-button", 30, 338);
+                game.GetSpriteSheet().DrawTexture("highscore-button", 150, 338);
+                //game.GetSpriteSheet().DrawTexture("rate-button", 115, 274);
+                game.GetSpriteBatch().Draw(birdAnimations[birdFlapCount], new Rectangle((int)birdLocation.X, (int)birdLocation.Y, 35, 25), Color.White);
+            }
         }
 
- 
+        /// <summary>
+        /// Sets the bool value of showing the highscore screen.
+        /// </summary>
+        /// <param name="highscore">The boolean value.</param>
+        public void SetHighScore(bool highscore) {
+            highscore = true;
+        }
+
     }
 }

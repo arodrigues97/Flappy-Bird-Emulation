@@ -1,4 +1,5 @@
 ﻿using Flappy_Bird.fb.entity;
+using Flappy_Bird_Emulation.fb.entity;
 using Flappy_Bird_Emulation.fb.logic.entity.flappybird;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
@@ -9,15 +10,10 @@ using System;
 namespace Flappy_Bird.fb.Screen {
     public class PlayScreen : GameScreen {
 
-        private Texture2D backgroundDay;
-
-        private Texture2D backgroundNight;
-
-        private Texture2D baseLand;
-
         private readonly Texture2D[][] birdAnimations = new Texture2D[3][];
 
-        private readonly Texture2D[] scoreTexures = new Texture2D[10];
+        private readonly Texture2D[] scoreTextures = new Texture2D[10];
+        private readonly Texture2D[] smallScoreTextures = new Texture2D[10];
 
         private SoundEffect wingFlapSfx;
 
@@ -40,17 +36,14 @@ namespace Flappy_Bird.fb.Screen {
         public PlayScreen(FlappyBirdGame game) : base(game) { }
 
         public override void Load() {
-            backgroundDay = game.Content.Load<Texture2D>("background-day");
-            backgroundNight = game.Content.Load<Texture2D>("background-night");
-            baseLand = game.Content.Load<Texture2D>("base");
             String color;
             for (int i = 0; i < 3; i++) {
                 color = Enum.GetValues(typeof(BirdType)).GetValue(i).ToString().ToLower();
-                birdAnimations[i] = new Texture2D[] { game.Content.Load<Texture2D>(color + "bird-upflap"), game.Content.Load<Texture2D>(color + "bird-midflap"), game.Content.Load<Texture2D>(color + "bird-downflap") };
+                birdAnimations[i] = new Texture2D[] { game.GetSpriteSheet().GetTexture(color + "-upflap"), game.GetSpriteSheet().GetTexture(color + "-midflap"), game.GetSpriteSheet().GetTexture(color + "-downflap") };
             }
-            for (int i = 0; i < scoreTexures.Length; i++) {
-                Console.WriteLine(i.ToString());
-                scoreTexures[i] = game.Content.Load<Texture2D>(i.ToString());
+            for (int i = 0; i < scoreTextures.Length; i++) {
+                scoreTextures[i] = game.GetSpriteSheet().GetTexture(i.ToString());
+                smallScoreTextures[i] = game.GetSpriteSheet().GetTexture(i.ToString() + "-small");
             }
             wingFlapSfx = game.Content.Load<SoundEffect>("sfx_wing");
             dieSfx = game.Content.Load<SoundEffect>("sfx_die");
@@ -59,14 +52,18 @@ namespace Flappy_Bird.fb.Screen {
         }
 
         public override void Initialize() {
-            background = FlappyBirdGame.Random.Next(1, 3) == 1 ?  backgroundDay : backgroundNight;
+            background = FlappyBirdGame.Random.Next(1, 3) == 1 ? game.GetSpriteSheet().GetTexture("background-day") : game.GetSpriteSheet().GetTexture("background-night");
+            if (game.GetFlappyBird() != null) {
+                game.GetEntityManager().RemoveEntity(game.GetFlappyBird());
+                game.GetEntityManager().Clear(EntityType.PIPE);
+                game.GetEntityManager().getPipeManager().Clear();
+            }
             game.GetEntityManager().AddEntity(game.SetFlappyBird(new FlappyBird()));
-            Console.WriteLine("Initialized Play Screen!");
         }
 
         public override void Draw(GameTime gameTime) {
             game.GetSpriteBatch().Draw(background, new Rectangle(0, 0, 288, 512), Color.White);
-            Texture2D texture = baseLand;
+            Texture2D texture = game.GetSpriteSheet().GetTexture("base");
             Rectangle sourceRectangle = new Rectangle(0, 0, 336, 112);
             Vector2 origin = new Vector2(0, 0);
             Vector2 location = new Vector2(baseX, 512 - 112);
@@ -75,19 +72,63 @@ namespace Flappy_Bird.fb.Screen {
                 location = new Vector2(288 + baseX, 512 - 112);
                 game.GetSpriteBatch().Draw(texture, location, sourceRectangle, Color.White, 0f, origin, 1.0f, SpriteEffects.None, 1);
             }
-            DrawScore();
+            DrawScore(game.GetFlappyBird().GetScore(), 115, 40, false);
             if (game.GetFlappyBird().IsDead() || game.GetFlappyBird().HasHitPipe()) {
                 texture = game.GetSpriteSheet().GetTexture("gameover");
-                location = new Vector2(72, 140);
+                location = new Vector2(50, 140);
                 sourceRectangle = new Rectangle(0, 0, texture.Width, texture.Height);
                 game.GetSpriteBatch().Draw(texture, location, sourceRectangle, Color.White, 0f, origin, 1.0f, SpriteEffects.None, 1);
-                game.GetSpriteSheet().DrawTexture("gameover-panel", 50, 200);
+                game.GetSpriteSheet().DrawTexture("gameover-panel", 34, 200);
+                texture = game.GetSpriteSheet().GetTexture("play-button");
+                location = new Vector2(30, 338);
+                sourceRectangle = new Rectangle(0, 0, texture.Width, texture.Height);
+                game.GetSpriteBatch().Draw(texture, location, sourceRectangle, Color.White, 0f, origin, 1.0f, SpriteEffects.None, 1);
+                texture = game.GetSpriteSheet().GetTexture("highscore-button");
+                location = new Vector2(150, 338);
+                sourceRectangle = new Rectangle(0, 0, texture.Width, texture.Height);
+                game.GetSpriteBatch().Draw(texture, location, sourceRectangle, Color.White, 0f, origin, 1.0f, SpriteEffects.None, 1);
+                int score = game.GetFlappyBird().GetScore();
+                String medal = "";
+                int medalX = 0;
+                int medalY = 0;
+                if (score >= 40) {
+                    medal = "platinum";
+                    medalY = 249;
+                    medalX = 59;
+                } else if (score >= 30) {
+                    medal = "gold";
+                    medalY = 246;
+                    medalX = 62;
+                } else if (score >= 20) {
+                    medal = "silver";
+                    medalX = 59; medalY = 245;
+                } else if (score >= 10) {
+                    medal = "bronze";
+                    medalY = 248;
+                    medalX = 62;
+                }
+                if (medal != "") {
+                    game.GetSpriteSheet().DrawTexture(medal + "-medal", medalX, medalY);
+                }
+                DrawScore(game.GetFlappyBird().GetScore(), 212, 239, true);
+                int bestScore = game.GetHighscoreManager().GetBestScore();
+                if (bestScore != -1) {
+                    DrawScore(bestScore, 212, 287, true);
+                }
                 return;
             }
 
         }
 
         public override void Update(GameTime gameTime) {
+            MouseState state = Mouse.GetState(game.Window);
+            if ((game.GetFlappyBird().IsDead() || game.GetFlappyBird().HasHitPipe()) && game.GetSpriteSheet().IsInsideTexture("play-button", state, 30, 338) && state.LeftButton == ButtonState.Pressed) {
+                GameManager.InitializeState(GameState.PLAYING);
+            }
+            if ((game.GetFlappyBird().IsDead() || game.GetFlappyBird().HasHitPipe()) && game.GetSpriteSheet().IsInsideTexture("highscore-button", state, 150, 338) && state.LeftButton == ButtonState.Pressed) {
+                GameManager.InitializeState(GameState.MAIN_MENU);
+                ((MenuScreen)GameManager.GetGame().GetGameScreen()).SetHighScore(true);
+            }
             if (game.GetFlappyBird().IsDead() || game.GetFlappyBird().HasHitPipe()) {
                 return;
             }
@@ -102,33 +143,30 @@ namespace Flappy_Bird.fb.Screen {
                 spacebarDown = false;
                 hasJumped = false;
             }
-            MouseState state = Mouse.GetState(game.Window);
             baseX--;
             if (baseX == -336) {
                 baseX = 0;
             }
         }
-
-        private void DrawScore() {
-            String scoreString = game.GetFlappyBird().GetScore().ToString();
+        public void DrawScore(int score, int x, int y, bool small) {
+            String scoreString = score.ToString();
             char[] numberChars = scoreString.ToCharArray();
             int[] numbers = new int[numberChars.Length];
             for (int i = 0; i < numberChars.Length; i++) {
                 numbers[i] = int.Parse(numberChars[i].ToString());
             }
-            int x = 115;
             Texture2D numberTexture;
             for (int i = 0; i < numbers.Length; i++) {
-                numberTexture = DrawNumber(numbers[i], x);
+                numberTexture = DrawNumber(numbers[i], x, y, small);
                 x += numberTexture.Width;
             }
         }
 
-        private Texture2D DrawNumber(int number, int x) {
-            Texture2D texture = scoreTexures[number];
+        public Texture2D DrawNumber(int number, int x, int y, bool small) {
+            Texture2D texture = small ? smallScoreTextures[number] : scoreTextures[number];
             Rectangle sourceRectangle = new Rectangle(0, 0, texture.Width, 36);
             Vector2 origin = new Vector2(0, 0);
-            Vector2 location = new Vector2(x, 40);
+            Vector2 location = new Vector2(x, y);
             game.GetSpriteBatch().Draw(texture, location, sourceRectangle, Color.White, 0f, origin, 1.0f, SpriteEffects.None, 1);
             return texture;
         }

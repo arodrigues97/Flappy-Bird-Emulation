@@ -50,11 +50,18 @@ namespace Flappy_Bird_Emulation.fb.logic {
             entities.Add(entity.GetEntityType(), entityList);
             Console.WriteLine(entities.Count);
         }
+        
+        public void Clear(EntityType type) {
+            entities.Remove(type);
+        }
 
         public void RemoveEntity(Entity entity) {
             List<Entity> entityList = GetEntitiesByType(entity.GetEntityType());
             if (entityList == null) {
                 entityList = new List<Entity>();
+            }
+            if (entities.ContainsKey(entity.GetEntityType())) {
+                entities.Remove(entity.GetEntityType());
             }
             entityList.Remove(entity);
             entities.Add(entity.GetEntityType(), entityList);

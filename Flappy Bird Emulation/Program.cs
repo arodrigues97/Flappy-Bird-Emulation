@@ -8,7 +8,7 @@ namespace Flappy_Bird_Emulation {
     /// </summary>
     public static class Program  {
 
-        public const bool DEV_MODE = false;
+        public const bool DEV_MODE = true;
 
         /// <summary>
         /// The main entry point for the application.

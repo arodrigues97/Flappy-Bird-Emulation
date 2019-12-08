@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,6 @@ namespace Flappy_Bird_Emulation.fb {
         protected void Add(String key, Texture2D texture) {
             sprites.Add(key, texture);
         }
-
         public void DrawTexture(String key, int x, int y) {
             Texture2D texture;
             sprites.TryGetValue(key, out texture);
@@ -61,6 +61,11 @@ namespace Flappy_Bird_Emulation.fb {
             originalTexture.GetData(0, sourceRectangle, data, 0, data.Length);
             cropTexture.SetData(data);
             return cropTexture;
+        }
+
+        public bool IsInsideTexture(string key, MouseState mouseState, int x, int y) {
+            Texture2D texture = GetTexture(key);
+            return mouseState.X >= x && mouseState.X <= x + texture.Width && mouseState.Y >= y && mouseState.Y <= y + texture.Height;
         }
 
         public Texture2D GetTexture(String key) {

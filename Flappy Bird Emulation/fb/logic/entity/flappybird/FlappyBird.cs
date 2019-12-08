@@ -7,11 +7,12 @@ using System;
 using System.Diagnostics;
 using System.Collections.Generic;
 using Flappy_Bird_Emulation.fb.logic.entity.flappybird;
+using Flappy_Bird_Emulation.fb.entity.pipe;
 
 namespace Flappy_Bird.fb.entity {
     public class FlappyBird : Entity {
 
-        public const long FLAP_SPEED = 200L;
+        public const long FLAP_SPEED = 100L;
 
         private static readonly Vector2 START_LOCATION = new Vector2(50, 250);
 
@@ -53,7 +54,6 @@ namespace Flappy_Bird.fb.entity {
                     PlayScreen playScreen = (PlayScreen)GameManager.GetGame().GetGameScreen();
                     playScreen.GetHitSfx().Play();
                 }
-                physics.SetRotation(90 % 360);
                 return;
             }
             if (hitPipe) {
@@ -81,11 +81,17 @@ namespace Flappy_Bird.fb.entity {
         }
 
         public bool IsDead() {
-            if (location.Y >= 375) {
+            Pipe pipe = GameManager.GetGame().GetEntityManager().getPipeManager().GetPipe();
+            bool abovePipe = location.Y < 0 && (pipe != null && pipe.GetRectangle().X <= GetRectangle().X);
+            if (location.Y >= 375 || abovePipe) {
+                if (abovePipe) {
+                    hitPipe = true;
+                }
                 if (!gameOverSoundPlayed) {
                     gameOverSoundPlayed = true;
                     PlayScreen playScreen = (PlayScreen)GameManager.GetGame().GetGameScreen();
                     playScreen.GetDieSfx().Play();
+                    GameManager.GetGame().GetHighscoreManager().AddScore(score);
                 }
                 return true;
             }
@@ -112,7 +118,7 @@ namespace Flappy_Bird.fb.entity {
 
         public override Texture2D GetTexture() {
             Texture2D[] birdAnimations = ((PlayScreen)GameManager.GetGame().GetGameScreen()).GetBirdAnimations()[(int)type];
-            return birdAnimations[flapIndex];
+          return birdAnimations[flapIndex];
         }
 
         public int GetScore() {

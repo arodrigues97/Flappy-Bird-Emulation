@@ -41,6 +41,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="fb\HighscoreManager.cs" />
     <Compile Include="fb\logic\entity\EntityType.cs" />
     <Compile Include="fb\logic\entity\flappybird\BirdPhysics.cs" />
     <Compile Include="fb\logic\entity\flappybird\BirdType.cs" />
@@ -51,7 +52,7 @@
     <Compile Include="fb\logic\entity\Entity.cs" />
     <Compile Include="fb\logic\entity\flappybird\FlappyBird.cs" />
     <Compile Include="fb\logic\EntityManager.cs" />
-    <Compile Include="fb\logic\PipeManager.cs" />
+    <Compile Include="fb\logic\entity\pipe\PipeManager.cs" />
     <Compile Include="fb\screen\GameScreen.cs" />
     <Compile Include="fb\screen\MenuScreen.cs" />
     <Compile Include="fb\screen\PauseScreen.cs" />

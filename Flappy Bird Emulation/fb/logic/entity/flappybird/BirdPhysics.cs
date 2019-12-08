@@ -34,12 +34,18 @@ namespace Flappy_Bird_Emulation.fb.logic.entity.flappybird {
         /// </summary>
         private double delay;
 
+        /// <summary>
+        /// The value to force upwards rotation on jump.
+        /// </summary>
         private double upwardsRotate;
 
         /// <summary>
         /// Constructs the Bird Physics Instance.
         /// </summary>
         public BirdPhysics() {
+            /**
+             * Empty
+             * */
         }
 
         /// <summary>
@@ -49,7 +55,7 @@ namespace Flappy_Bird_Emulation.fb.logic.entity.flappybird {
         public void Calculate(ref Vector2 location) {
             velocity += GRAVITY;
             location.Y += (int)velocity;
-            rotation = (float)((((90 * (velocity + 35) / 25) - 90) * Math.PI / 180) + upwardsRotate);
+            rotation = (float) ((((90 * (velocity + 35) / 25) - 90) * Math.PI / 180) + upwardsRotate);
             rotation /= 2;
             rotation = (float)(rotation > Math.PI / 2 ? Math.PI / 2 : rotation);
             if (delay > 0) {

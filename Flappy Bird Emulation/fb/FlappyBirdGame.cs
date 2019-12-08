@@ -13,6 +13,7 @@ using System.Diagnostics;
 
 
 namespace Flappy_Bird.fb {
+
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
@@ -64,6 +65,11 @@ namespace Flappy_Bird.fb {
         private readonly EntityManager entityManager;
 
         /// <summary>
+        /// Represents the Highscore Manager instance.
+        /// </summary>
+        private readonly HighscoreManager highscoreManager;
+
+        /// <summary>
         /// Constructs a new DoodleJumpGame  instance.
         /// </summary>
         public FlappyBirdGame() {
@@ -73,6 +79,7 @@ namespace Flappy_Bird.fb {
             menuScreen = new MenuScreen(this);
             playScreen = new PlayScreen(this);
             pauseScreen = new PauseScreen(this);
+            highscoreManager = new HighscoreManager();
             Console.WriteLine("Created new Flappy Bird Game");
         }
 
@@ -97,11 +104,11 @@ namespace Flappy_Bird.fb {
         /// </summary>
         protected override void LoadContent() {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            spriteSheet = new FlappyBirdSpriteSheet(this);
+            spriteSheet.Parse();
             menuScreen.Load();
             playScreen.Load();
             pauseScreen.Load();
-            spriteSheet = new FlappyBirdSpriteSheet(this);
-            spriteSheet.Parse();
             Debug.WriteLine("Loaded Content!");
         }
 
@@ -193,6 +200,9 @@ namespace Flappy_Bird.fb {
             return spriteBatch;
         }
 
+        public HighscoreManager GetHighscoreManager() {
+            return highscoreManager;
+        }
 
     }
 }

@@ -20,35 +20,9 @@ Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\b
 Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Debug\Flappy Bird Emulation.csproj.CopyComplete
 Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Debug\Flappy Bird Emulation.exe
 Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Debug\Flappy Bird Emulation.pdb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\fb-spritesheet.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\pipe-red.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\redbird-downflap.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\redbird-midflap.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\bluebird-midflap.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\8.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\9.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\background-day.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\redbird-upflap.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\yellowbird-upflap.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\background-night.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\bluebird-upflap.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\yellowbird-downflap.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\yellowbird-midflap.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\pipe-green.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\gameover.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\base.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\bluebird-downflap.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\7.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\6.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\5.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\1.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\0.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\2.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\3.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\message.xnb
-Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\4.xnb
 Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\sfx_hit.xnb
 Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\sfx_wing.xnb
 Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\sfx_die.xnb
 Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\sfx_swooshing.xnb
 Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\sfx_point.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\flappybird-spritesheet.xnb
