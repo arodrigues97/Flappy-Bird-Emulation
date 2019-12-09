@@ -5,6 +5,7 @@
   <Config />
   <SourceFiles>
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/flappybird-spritesheet.png</File>
+    <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/madeby.png</File>
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/sfx_die.wav</File>
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/sfx_hit.wav</File>
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/sfx_point.wav</File>
@@ -12,6 +13,7 @@
     <File>Z:/Development/C#/Game Development/Flappy Bird Emulation/Flappy Bird Emulation/Content/sfx_wing.wav</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

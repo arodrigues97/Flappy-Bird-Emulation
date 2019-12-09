@@ -26,3 +26,8 @@ Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\b
 Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\sfx_swooshing.xnb
 Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\sfx_point.xnb
 Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\flappybird-spritesheet.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Content\madeby.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Flappy Bird Emulation.exe.manifest
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Debug\Flappy Bird Emulation.application
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Debug\Flappy Bird Emulation.exe.manifest
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Debug\Flappy Bird Emulation.application

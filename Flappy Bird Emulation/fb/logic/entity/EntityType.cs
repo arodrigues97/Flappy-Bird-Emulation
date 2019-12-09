@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Flappy_Bird_Emulation.fb.entity
+{
 
-namespace Flappy_Bird_Emulation.fb.entity {
-    public enum EntityType {
+    /// <summary>
+    /// An entity type.
+    /// </summary>
+    public enum EntityType
+    {
         BIRD = 0,
-        PIPE = 1 
+        PIPE = 1
     }
 }

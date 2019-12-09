@@ -1,13 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 
-namespace Flappy_Bird_Emulation.fb.logic.entity.flappybird {
+namespace Flappy_Bird_Emulation.fb.logic.entity.flappybird
+{
 
     /// <summary>
     /// Represents the class used to handle the Physics of the Bird.
     /// <see cref="https://github.com/paulkr/Flappy-Bird/blob/master/lib/Bird.java"/> for physics reference.
     /// </summary>
-    public class BirdPhysics {
+    public class BirdPhysics
+    {
 
         /// <summary>
         /// The upwards jump shift constant.
@@ -42,7 +44,8 @@ namespace Flappy_Bird_Emulation.fb.logic.entity.flappybird {
         /// <summary>
         /// Constructs the Bird Physics Instance.
         /// </summary>
-        public BirdPhysics() {
+        public BirdPhysics()
+        {
             /**
              * Empty
              * */
@@ -52,13 +55,15 @@ namespace Flappy_Bird_Emulation.fb.logic.entity.flappybird {
         /// Calculastes the new Physics state.
         /// </summary>
         /// <param name="location">The location to effect.</param>
-        public void Calculate(ref Vector2 location) {
+        public void Calculate(ref Vector2 location)
+        {
             velocity += GRAVITY;
             location.Y += (int)velocity;
-            rotation = (float) ((((90 * (velocity + 35) / 25) - 90) * Math.PI / 180) + upwardsRotate);
+            rotation = (float)((((90 * (velocity + 35) / 25) - 90) * Math.PI / 180) + upwardsRotate);
             rotation /= 2;
             rotation = (float)(rotation > Math.PI / 2 ? Math.PI / 2 : rotation);
-            if (delay > 0) {
+            if (delay > 0)
+            {
                 delay--;
             }
         }
@@ -66,8 +71,10 @@ namespace Flappy_Bird_Emulation.fb.logic.entity.flappybird {
         /// <summary>
         /// Handles the Jump physics effect.
         /// </summary>
-        public void Jump() {
-            if (delay < 1) {
+        public void Jump()
+        {
+            if (delay < 1)
+            {
                 velocity = -JUMP_SHIFT;
                 upwardsRotate = -189.5;
             }
@@ -77,7 +84,8 @@ namespace Flappy_Bird_Emulation.fb.logic.entity.flappybird {
         /// Sets the rotation of the physics state.
         /// </summary>
         /// <param name="rotation">The rotation.</param>
-        public void SetRotation(float rotation) {
+        public void SetRotation(float rotation)
+        {
             this.rotation = rotation;
         }
 
@@ -85,7 +93,8 @@ namespace Flappy_Bird_Emulation.fb.logic.entity.flappybird {
         /// Gets the Rotation.
         /// </summary>
         /// <returns>The rotation.</returns>
-        public float GetRotation() {
+        public float GetRotation()
+        {
             return rotation;
         }
 

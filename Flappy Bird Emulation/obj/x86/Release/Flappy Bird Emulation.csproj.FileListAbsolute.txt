@@ -1,0 +1,33 @@
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\Content\sfx_hit.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\Content\flappybird-spritesheet.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\Content\sfx_wing.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\Content\madeby.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\Content\sfx_die.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\Content\sfx_swooshing.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\Content\sfx_point.xnb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\Flappy Bird Emulation.exe.manifest
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\Flappy Bird Emulation.application
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\Flappy Bird Emulation.exe
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\Flappy Bird Emulation.pdb
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\MonoGame.Framework.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\SharpDX.MediaFoundation.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\SharpDX.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\SharpDX.XAudio2.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\SharpDX.DXGI.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\SharpDX.Direct3D11.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\SharpDX.Direct2D1.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\SharpDX.XInput.dll
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\MonoGame.Framework.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\SharpDX.MediaFoundation.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\SharpDX.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\SharpDX.XAudio2.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\SharpDX.DXGI.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\SharpDX.Direct3D11.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\SharpDX.Direct2D1.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\bin\Windows\x86\Release\SharpDX.XInput.xml
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Release\Flappy Bird Emulation.csprojAssemblyReference.cache
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Release\Flappy Bird Emulation.exe.manifest
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Release\Flappy Bird Emulation.application
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Release\Flappy Bird Emulation.csproj.CopyComplete
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Release\Flappy Bird Emulation.exe
+Z:\Development\C#\Game Development\Flappy Bird Emulation\Flappy Bird Emulation\obj\x86\Release\Flappy Bird Emulation.pdb

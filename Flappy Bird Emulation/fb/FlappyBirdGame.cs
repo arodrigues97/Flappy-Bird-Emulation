@@ -12,12 +12,14 @@ using System;
 using System.Diagnostics;
 
 
-namespace Flappy_Bird.fb {
+namespace Flappy_Bird.fb
+{
 
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class FlappyBirdGame : Game {
+    public class FlappyBirdGame : Game
+    {
 
         /// <summary>
         /// Represents the random instance to use.
@@ -33,11 +35,6 @@ namespace Flappy_Bird.fb {
         /// Represents the games play screen.
         /// </summary>
         private readonly PlayScreen playScreen;
-
-        /// <summary>
-        /// Represents the games pause screen.
-        /// </summary>
-        private readonly PauseScreen pauseScreen;
 
         /// <summary>
         /// Represents the Graphics Device manager instance.
@@ -70,15 +67,20 @@ namespace Flappy_Bird.fb {
         private readonly HighscoreManager highscoreManager;
 
         /// <summary>
+        /// Represents the made by adam texture.
+        /// </summary>
+        private Texture2D madeByTexture;
+
+        /// <summary>
         /// Constructs a new DoodleJumpGame  instance.
         /// </summary>
-        public FlappyBirdGame() {
+        public FlappyBirdGame()
+        {
             Content.RootDirectory = "Content";
             graphics = new GraphicsDeviceManager(this);
             entityManager = new EntityManager();
             menuScreen = new MenuScreen(this);
             playScreen = new PlayScreen(this);
-            pauseScreen = new PauseScreen(this);
             highscoreManager = new HighscoreManager();
             Console.WriteLine("Created new Flappy Bird Game");
         }
@@ -89,7 +91,8 @@ namespace Flappy_Bird.fb {
         /// related content.  Calling base.Initialize will enumerate through any components
         /// and initialize them as well.
         /// </summary>
-        protected override void Initialize() {
+        protected override void Initialize()
+        {
             base.Initialize();
             this.IsMouseVisible = true;
             graphics.PreferredBackBufferHeight = 512;
@@ -102,13 +105,14 @@ namespace Flappy_Bird.fb {
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
         /// </summary>
-        protected override void LoadContent() {
+        protected override void LoadContent()
+        {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             spriteSheet = new FlappyBirdSpriteSheet(this);
             spriteSheet.Parse();
             menuScreen.Load();
             playScreen.Load();
-            pauseScreen.Load();
+            madeByTexture = Content.Load<Texture2D>("madeby");
             Debug.WriteLine("Loaded Content!");
         }
 
@@ -116,7 +120,8 @@ namespace Flappy_Bird.fb {
         /// UnloadContent will be called once per game and is the place to unload
         /// game-specific content.
         /// </summary>
-        protected override void UnloadContent() {
+        protected override void UnloadContent()
+        {
             // TODO: Unload any non ContentManager content here
         }
 
@@ -125,17 +130,21 @@ namespace Flappy_Bird.fb {
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override void Update(GameTime gameTime) {
+        protected override void Update(GameTime gameTime)
+        {
             GameScreen screen = GetGameScreen();
-            if (screen != null) {
+            if (screen != null)
+            {
                 GetGameScreen().Update(gameTime);
             }
-            if (GameManager.GetGameState() == GameState.PLAYING) {
+            if (GameManager.GetGameState() == GameState.PLAYING)
+            {
                 GetEntityManager().Update(gameTime);
             }
             base.Update(gameTime);
             MouseState mouseState = Mouse.GetState(Window);
-            if (Program.DEV_MODE) {
+            if (Program.DEV_MODE)
+            {
                 spriteBatch.Begin();
                 Console.WriteLine("Mouse X: " + mouseState.Position.X + ", Mouse Y: " + mouseState.Position.Y, new Vector2(10, 10), Color.Black);
                 spriteBatch.End();
@@ -146,20 +155,24 @@ namespace Flappy_Bird.fb {
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override void Draw(GameTime gameTime) {
+        protected override void Draw(GameTime gameTime)
+        {
             GameScreen screen = GetGameScreen();
             spriteBatch.Begin(SpriteSortMode.FrontToBack);
-            if (GameManager.GetGameState() == GameState.PLAYING) {
+            if (GameManager.GetGameState() == GameState.PLAYING)
+            {
                 GetEntityManager().Draw(gameTime, spriteBatch);
             }
-            if (screen != null) {
+            if (screen != null)
+            {
                 GetGameScreen().Draw(gameTime);
             }
             spriteBatch.End();
             base.Draw(gameTime);
         }
 
-        public FlappyBird SetFlappyBird(FlappyBird flappyBird) {
+        public FlappyBird SetFlappyBird(FlappyBird flappyBird)
+        {
             this.flappyBird = flappyBird;
             return this.flappyBird;
         }
@@ -168,40 +181,51 @@ namespace Flappy_Bird.fb {
         /// Gets the Game Screen to render/logic.
         /// </summary>
         /// <returns>The Game Screen to use.</returns>
-        public GameScreen GetGameScreen() {
-            switch (GameManager.GetGameState()) {
+        public GameScreen GetGameScreen()
+        {
+            switch (GameManager.GetGameState())
+            {
                 case GameState.MAIN_MENU:
                     return menuScreen;
                 case GameState.PLAYING:
                     return playScreen;
-                case GameState.PAUSE:
-                    return pauseScreen;
             }
             return null;
         }
 
-        public FlappyBird GetFlappyBird() {
+        public FlappyBird GetFlappyBird()
+        {
             return flappyBird;
         }
 
-        public EntityManager GetEntityManager() {
+        public EntityManager GetEntityManager()
+        {
             return entityManager;
         }
 
-        public SpriteSheet GetSpriteSheet() {
+        public SpriteSheet GetSpriteSheet()
+        {
             return spriteSheet;
         }
 
-        public PlayScreen GetPlayScreen() {
+        public PlayScreen GetPlayScreen()
+        {
             return playScreen;
         }
 
-        public SpriteBatch GetSpriteBatch() {
+        public SpriteBatch GetSpriteBatch()
+        {
             return spriteBatch;
         }
 
-        public HighscoreManager GetHighscoreManager() {
+        public HighscoreManager GetHighscoreManager()
+        {
             return highscoreManager;
+        }
+
+        public Texture2D GetMadeByTexture()
+        {
+            return madeByTexture;
         }
 
     }
